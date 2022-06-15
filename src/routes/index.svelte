@@ -1,5 +1,5 @@
 <section class="opening">
-  <video class="opening__video" autoplay loop muted>
+  <video class="opening__video" autoplay loop muted playsinline>
     <source src="/opening.mp4" type="video/mp4" />
     <track kind="captions" />
   </video>
