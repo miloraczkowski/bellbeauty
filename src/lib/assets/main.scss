@@ -1,0 +1,106 @@
+@import './variables';
+
+// Font
+
+@font-face {
+  font-family: 'Quicksand Variable';
+  src: url('./Quicksand-Variable.woff2') format('woff2 supports variations'),
+       url('./Quicksand-Variable.woff2') format('woff2-variations');
+  font-weight: 1 1000;
+  font-stretch: 25% 200%;
+}
+
+// Basic styling
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  @include fontSize(16px);
+  font-family: 'Quicksand', sans-serif;
+}
+
+a {
+  font: inherit;
+  text-decoration: inherit;
+  color: inherit;
+}
+
+h1 {
+  margin: -26px 0 -5px;
+  font-size: 100px;
+  font-weight: 100;
+}
+
+h2 {
+  margin: -11px 0 -3px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+h3 {
+  margin: -8px 0 -2px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+// Scrollbar
+
+::-webkit-scrollbar {
+  border-left: 2px solid #000000;
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+// Elements
+
+section {
+  padding: 50px 0;
+}
+
+section:not(:last-of-type) {
+  border-bottom: 2px solid #000000;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 50px;
+  max-width: 1630px;
+}
+
+.underline {
+  background-image: linear-gradient($accent, $accent);
+  background-size: 100% 5px;
+  background-position-y: 17px;
+  background-repeat: no-repeat;
+  transition: background-image .2s;
+}
+
+h2 > .underline {
+  background-size: 100% 8px;
+  background-position-y: 35px;
+}
+
+h3 > .underline {
+  background-size: 100% 6px;
+  background-position-y: 27px;
+}
+
+p {
+  line-height: 1.8;
+  text-align: justify;
+}
+
+// Responsiveness
+
+@media (max-width: 500px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}

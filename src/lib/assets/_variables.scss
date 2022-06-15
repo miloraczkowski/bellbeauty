@@ -1,0 +1,11 @@
+$accent: #4abeff;
+
+@mixin fontSize($fontSize) {
+  $fontWeight: map-get((
+    16px : 600,
+    20px : 500
+  ), $fontSize);
+
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
