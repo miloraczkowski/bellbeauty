@@ -100,10 +100,43 @@
       }
 
       img {
+        width: 100%;
         justify-self: end;
         border-left: 2px solid #000000;
         border-right: 2px solid #000000;
       }
+    }
+  }
+
+  // Responsiveness
+
+  @media (max-width: 900px) {
+    .opening__logo {
+      width: 500px;
+      height: auto;
+    }
+
+    .about {
+      padding: 50px 0;
+
+      > .wrapper {
+        grid-template-columns: 1fr;
+
+        > h3 {
+          margin: 0 auto;
+        }
+
+        > img {
+          justify-self: center;
+          border: 2px solid #000000;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .opening__logo {
+      width: 300px;
     }
   }
 </style>

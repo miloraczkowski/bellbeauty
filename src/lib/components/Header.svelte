@@ -4,7 +4,7 @@
       <h1 class="header__title">{title}</h1>
       <div class="header__subtitle">{subtitle}</div>
     </div>
-    <img class="header__image" src="/images/{image}.png" alt="Porównianie przed i po zabiegu">
+    <img class="header__image" src="/headers/{image}.png" alt="Porównianie przed i po zabiegu">
   </div>
 </header>
 
