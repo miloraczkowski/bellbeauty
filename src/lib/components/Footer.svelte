@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="wrapper">
-    <div>Bell Beauty &copy; { new Date().getFullYear() }. Wszystkie prawa zastrzeżone.</div>
-    <a class="footer__powered" href="https://webgates.eu">
+    <div>Bell Beauty &copy; { new Date().getFullYear() }. Unii Brzeskiej 32 Lesko. Wszystkie prawa zastrzeżone.</div>
+    <a class="footer__powered" href="mailto:miloraczkowski@gmail.com">
       <div>Powered by</div>
       <svg width="141" height="20" viewBox="0 0 141 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M26.1682 1.1215L20.9613 19.7597H16.5554L13.0574 6.48865L9.3992 19.7597L5.02003 19.7864L0 1.1215H4.00534L7.28972 15.5941L11.0814 1.1215H15.247L18.8251 15.514L22.1362 1.1215H26.1682Z" fill="white"/>
