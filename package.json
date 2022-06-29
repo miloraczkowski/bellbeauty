@@ -9,7 +9,8 @@
     "prepare": "svelte-kit sync",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "push": "git add * && git commit -m \"Update\" && git push origin main"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
