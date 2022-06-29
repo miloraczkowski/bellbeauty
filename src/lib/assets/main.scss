@@ -1,9 +1,5 @@
 @import './variables';
 
-// Font
-
-//@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;&display=swap');
-
 // Basic styling
 
 * {
@@ -26,19 +22,19 @@ a {
 h1 {
   margin: -26px 0 -5px;
   font-size: 100px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h2 {
   margin: -11px 0 -3px;
   font-size: 40px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h3 {
   margin: -8px 0 -2px;
   font-size: 30px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 // Scrollbar
