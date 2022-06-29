@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Bell Beauty</title>
+</svelte:head>
+
 <section class="opening">
   <video class="opening__video" autoplay loop muted playsinline>
     <source src="/opening.mp4" type="video/mp4" />
