@@ -2,13 +2,7 @@
 
 // Font
 
-@font-face {
-  font-family: 'Quicksand Variable';
-  src: url('./Quicksand-Variable.woff2') format('woff2 supports variations'),
-       url('./Quicksand-Variable.woff2') format('woff2-variations');
-  font-weight: 1 1000;
-  font-stretch: 25% 200%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;&display=swap');
 
 // Basic styling
 
@@ -19,8 +13,8 @@
 }
 
 body {
-  @include fontSize(16px);
   font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
 }
 
 a {
@@ -32,7 +26,7 @@ a {
 h1 {
   margin: -26px 0 -5px;
   font-size: 100px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 h2 {

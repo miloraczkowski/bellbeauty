@@ -122,11 +122,13 @@
       > .wrapper {
         grid-template-columns: 1fr;
 
-        > h3 {
-          margin: 0 auto;
+        h3 {
+          margin-left: auto;
+          margin-right: auto;
+          width: fit-content;
         }
 
-        > img {
+        img {
           justify-self: center;
           border: 2px solid #000000;
         }
@@ -137,6 +139,12 @@
   @media (max-width: 600px) {
     .opening__logo {
       width: 300px;
+    }
+  }
+ 
+  @media (max-width: 500px) {
+    .opening {
+      max-height: 300px;
     }
   }
 </style>

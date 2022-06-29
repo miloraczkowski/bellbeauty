@@ -12,22 +12,17 @@ export async function get() {
     }
   }
 
-  const Tables = mongo.db('bellbeauty').collection('pricelists')
+  const Lists = mongo.db('bellbeauty').collection('pricelists')
 
   try {
-    const tables = await Tables.find({ show: true }).project({
+    const lists = await Lists.find({ show: true }).project({
       _id: 0,
-      name: 1,
-      description: 1,
-      items: 1
+      show: 0
     }).toArray()
 
     return {
-      Headers: {
-        accept: 'application/json'
-      },
       body: {
-        tables
+        lists
       }
     }
   } catch {
