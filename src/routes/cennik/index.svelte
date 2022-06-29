@@ -10,7 +10,7 @@
         <h2><span class="underline">{list.name}</span></h2>
       </div>
       {#if list.description}
-        <div class="list__description">{list.description}</div>
+        <div class="list__description">{@html list.description}</div>
       {/if}
       {#each list.items as item}
         <div class="list__item">
@@ -20,9 +20,7 @@
             <div class="list__item__description">{item.description}</div>
           {/if}
           {#each item.additional as additional}
-            <div class="list__additional">
-              + {additional.name} - {additional.price} zł
-            </div>
+            <div class="list__additional">• {additional.name} - {additional.price} zł</div>
           {/each}
         </div>
       {/each}
@@ -82,6 +80,7 @@ import Header from '../../lib/components/Header.svelte'
     &__description {
       margin: 0 auto 50px;
       max-width: 800px;
+      text-align: center;
     }
 
     &__item {

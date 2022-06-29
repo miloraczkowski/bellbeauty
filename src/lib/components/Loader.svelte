@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<script lang="ts">
+<script lang="ts">/*
   import { onMount, onDestroy } from 'svelte'
 
   // Disable scrollbar
@@ -29,7 +29,7 @@
   onDestroy(() => {
     let body = document.querySelector('body') as HTMLBodyElement
     body.style.overflow = 'auto'
-  })
+  })*/
 </script>
 
 <style lang="scss">
