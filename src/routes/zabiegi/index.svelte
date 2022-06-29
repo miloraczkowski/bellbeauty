@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Bell Beauty - Zabiegi</title>
+</svelte:head>
+
 <Header title="Zabiegi" subtitle="Zobacz oferowane przez nas zabiegi" image="treatments" />
 <Note>Chwilowo informacje na tej podstronie są ograniczone. W przeciągu kilku dni pojawi się tutaj dużo więcej szczegółowych informacji o zabiegach które oferujemy. Przepraszamy za uniedogodnienia i zapraszamy do naszego salonu!</Note>
 {#each treatments as treatment}
