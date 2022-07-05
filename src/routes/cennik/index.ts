@@ -22,7 +22,7 @@ export async function get() {
 
     return {
       body: {
-        lists
+        unorderedLists: lists
       }
     }
   } catch {

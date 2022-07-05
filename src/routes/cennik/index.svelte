@@ -2,38 +2,46 @@
   <title>Bell Beauty - Cennik</title>
 </svelte:head>
 
+<img class="background" src="pricelists-background.png" alt="Background">
 <Header title="Cennik" subtitle="Zapoznaj się z cenami naszych usług" image="price-list" />
 {#each lists as list}
   <section class="list">
     <div class="wrapper">
-      <div class="list__name">
-        <h2><span class="underline">{list.name}</span></h2>
-      </div>
+      <h2 class="list__name">{list.name}</h2>
       {#if list.description}
         <div class="list__description">{@html list.description}</div>
       {/if}
       {#each list.items as item}
-        <div class="list__item">
-          <div class="list__item__name">{item.name}</div>
-          <div class="list__item__price">{parsePrice(item.price)}</div>
-          {#if item.description}
-            <div class="list__item__description">{item.description}</div>
+        {#if item.show}
+          {#if item.type === 'item'}
+            <div class="list__item" class:line={item.line}>
+              <div class="list__item__name">{item.name}</div>
+              <div class="list__item__price">{parsePrice(item.price)}</div>
+              {#if item.description}
+                <div class="list__item__description">{item.description}</div>
+              {/if}
+              {#each item.additional as additional}
+                <div class="list__item__additional">• {additional.name} - {additional.price} zł</div>
+              {/each}
+            </div>
+          {:else if item.type === 'title'}
+            <h3 class="list__title">{item.text}</h3>
+          {:else if item.type === 'note'}
+            <div class="list__note">{@html item.text}</div>
           {/if}
-          {#each item.additional as additional}
-            <div class="list__additional">• {additional.name} - {additional.price} zł</div>
-          {/each}
-        </div>
+        {/if}
       {/each}
     </div>
   </section>
 {/each}
 
 <script lang="ts">
-import Header from '../../lib/components/Header.svelte'
+import { base } from '$app/paths'
+  import Header from '../../lib/components/Header.svelte'
 
   interface List {
     description: string | null
-    items: Item[]
+    items: (Item | Title | Note)[]
     name: string
     order: number
     show: boolean
@@ -41,7 +49,8 @@ import Header from '../../lib/components/Header.svelte'
 
   interface Item {
     additional: Additional[]
-    description: string
+    description: string | null
+    line: boolean
     name: string
     order: number
     price: {
@@ -49,16 +58,48 @@ import Header from '../../lib/components/Header.svelte'
       top: number | null
     }
     show: boolean
+    type: 'item'
+  }
+
+  interface Title {
+    order: number
+    text: string
+    type: 'title'
+  }
+
+  interface Note {
+    order: number
+    text: string
+    type: 'note'
   }
 
   interface Additional {
     name: string
-    order: number
     price: number
-    show: boolean
+    show?: boolean
   }
 
-  export let lists: List[]
+  export let unorderedLists: List[]
+
+  // Reorder lists based on thir order number
+
+  const lists = (() => {
+    const result = Array(unorderedLists.length)
+
+    for (let i = 0; i < unorderedLists.length; i++) {
+      const list = unorderedLists[i]
+      const unorderedItems = list.items
+      const items = Array(unorderedItems.length)
+
+      for (let j = 0; j < unorderedItems.length; j++)
+        items[unorderedItems[j].order] = unorderedItems[j]
+      
+      list.items = items
+      result[list.order] = list
+    }
+
+    return result
+  })()
 
   function parsePrice(price: { base: number, top: number | null }): string {
     if (!price.top) return `${price.base} zł`
@@ -67,46 +108,56 @@ import Header from '../../lib/components/Header.svelte'
 </script>
 
 <style lang="scss">
-  .list {
-    > .wrapper {
-      max-width: 1400px;
-    }
-  
-    &__name {
-      margin: 0 0 50px;
-      text-align: center;
-    }
+  .background {
+    z-index: -100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: calc(100vh);
+  }
 
-    &__description {
-      margin: 0 auto 50px;
-      max-width: 800px;
+  :global(.header) {
+    background: #fff;
+  }
+
+  .list {
+    &__name, &__description {
+      margin: 0 0 50px;
       text-align: center;
     }
 
     &__item {
       display: grid;
       grid-template-columns: 1fr max-content;
-      gap: 0 20px;
-      border-top: 2px solid #000;
+      gap: 10px 20px;
+      margin: 30px 0;
+      border-top: 2px solid rgba(0, 0, 0, .20);
       padding: 10px 0 0;
 
-      &:not(:last-of-type) {
-        padding-bottom: 40px;
+      &.line {
+        border-color: rgba(0, 0, 0, 1);
       }
-
+      
       &__name, &__price {
         font-size: 20px;
       }
 
       &__description {
         grid-column: 1/-1;
-        margin: 10px 0 0;
+      }
+
+      &__additional {
+        grid-column: 1/-1;
+        margin: 0 0 0 30px;
       }
     }
 
-    &__additional {
-      grid-column: 1/-1;
-      margin: 10px 0 0 30px;
+    &__title {
+      margin: 30px 0;
+    }
+
+    &__note {
+      margin: 30px 0;
     }
   }
 </style>

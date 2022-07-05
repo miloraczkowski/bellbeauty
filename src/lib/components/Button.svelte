@@ -30,10 +30,11 @@
     transition: .2s;
     cursor: pointer;
     border: 2px solid #000000;
-    border-radius: 50px;
+    //border-radius: 50px;
     padding: 7px 20px;
     width: fit-content;
     background: $accent;
+    text-transform: uppercase;
 
     &:hover {
       background: #000000;

@@ -36,13 +36,13 @@
     <img src="/about_1.png" alt="Zdjęcie właścicielki salonu Bell Beauty">
   </div>
 </section>
-<section class="about">
+<section class="about left">
   <div class="wrapper">
+    <img src="/about_2.png" alt="Zdjęcie pracownicy salonu Bell Beauty">
     <div>
       <h3><span class="underline">Co dwie głowy to nie jedna!</span></h3>
       <p>W Bell Beauty nie pracuję sama, przedstawiam Wam Sarę, która jest moją pracownicą. Zwykle to ona będzie Was pierwsza gościła w salonie, bo ja często będę za zamkniętymi drzwiami mojego gabinetu.<br><br>Sara jest bardzo pogodną i miła dziewczyną. W Bell Beauty zajmuje się zabiegami na włosy, z których przeszła u mnie obszerne szkolenie. Bardzo szybko się uczy i jest staranna, dlatego z wielką chęcią oddaje Wasze włosy w jej ręce ❤️</p>
     </div>
-    <img src="/about_2.png" alt="Zdjęcie pracownicy salonu Bell Beauty">
   </div>
 </section>
 
@@ -109,6 +109,10 @@
         border-left: 2px solid #000000;
         border-right: 2px solid #000000;
       }
+    }
+
+    &.left > .wrapper {
+      grid-template-columns: 1fr minmax(0, 600px);
     }
   }
 
