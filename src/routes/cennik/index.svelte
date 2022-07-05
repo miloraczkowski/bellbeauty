@@ -12,7 +12,7 @@
         <div class="list__description">{@html list.description}</div>
       {/if}
       {#each list.items as item}
-        {#if item.show}
+        <!--{#if item.show}-->
           {#if item.type === 'item'}
             <div class="list__item" class:line={item.line}>
               <div class="list__item__name">{item.name}</div>
@@ -29,14 +29,13 @@
           {:else if item.type === 'note'}
             <div class="list__note">{@html item.text}</div>
           {/if}
-        {/if}
+        <!--{/if}-->
       {/each}
     </div>
   </section>
 {/each}
 
 <script lang="ts">
-import { base } from '$app/paths'
   import Header from '../../lib/components/Header.svelte'
 
   interface List {
