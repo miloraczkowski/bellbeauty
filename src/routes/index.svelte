@@ -124,7 +124,7 @@
       height: auto;
     }
 
-    .about {
+    .about, .about.left {
       padding: 50px 0;
 
       > .wrapper {
@@ -137,6 +137,7 @@
         }
 
         img {
+          grid-row: 2;
           justify-self: center;
           border: 2px solid #000000;
         }
