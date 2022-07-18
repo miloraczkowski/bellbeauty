@@ -60,7 +60,7 @@
     { label: 'cennik' },
     //{ label: 'kursy' },
     { label: 'bellery', href: 'https://allegro.pl/uzytkownik/bellery' },
-    { label: 'instagram', href: 'https://www.instagram.com/natkabell_beauty/' },
+    { label: 'instagram', href: 'https://www.instagram.com/bellbeauty.pl/' },
     { label: 'kontakt' }
   ] as {
     label: string

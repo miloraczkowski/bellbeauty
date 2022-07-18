@@ -18,7 +18,7 @@
 {/if}
 
 <script lang="ts">
-  export let text: string | undefined
+  export let text: string
   export let big = false
   export let href: string | undefined = undefined
   export let disabled = false
