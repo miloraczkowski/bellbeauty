@@ -1,0 +1,78 @@
+@import './variables';
+
+// Basic styling
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lora', sans-serif;
+  font-weight: 600;
+}
+
+a {
+  font: inherit;
+  text-decoration: inherit;
+  color: inherit;
+}
+
+h1 {
+  margin: -26px 0 -5px;
+  font-size: 100px;
+  font-weight: 400;
+}
+
+h2 {
+  margin: -11px 0 -3px;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+h3 {
+  margin: -8px 0 -2px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+// Scrollbar
+
+::-webkit-scrollbar {
+  border-left: 2px solid #000000;
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+// Elements
+
+section {
+  padding: 50px 0;
+}
+
+section:not(:last-of-type) {
+  border-bottom: 2px solid #000000;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 50px;
+  max-width: 1630px;
+}
+
+p {
+  line-height: 1.8;
+  text-align: justify;
+}
+
+// Responsiveness
+
+@media (max-width: 500px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}

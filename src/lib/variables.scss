@@ -1,0 +1,23 @@
+$accent: #659873;
+
+@mixin fontSize($fontSize) {
+  $fontWeight: map-get((
+    16px : 600,
+    20px : 500
+  ), $fontSize);
+
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin backgroundImage($light: true) {
+  @if $light {
+    background-image: url('/background-light.jpg');
+  } @else {
+    background-image: url('/background-dark.jpg');
+  }
+  
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
