@@ -173,17 +173,17 @@
     name: string
   }[] = [
     { url: 'modelowanie-ust', name: 'Modelowanie ust' },
-    { url: 'wolumetria', name: 'Wolumetria' },
-    { url: 'wypelnianie-zmarszczek', name: 'Wypełnianie zmarszczek' },
-    { url: 'botoks', name: 'Botoks' },
-    { url: 'lifting-rzes', name: 'Lifting rzęs' },
-    { url: 'kriolipoliza', name: 'Kriolipoliza' },
-    { url: 'epilacja-laserowa', name: 'Epilacja laserowa' },
-    { url: 'stylizacja-rzes', name: 'Stylizacja rzęs' },
-    { url: 'stylizacja-brwi', name: 'Stylizacja brwi' },
     { url: 'stymulatory-tkankowe', name: 'Stymulatory tkankowe' },
-    { url: 'piercing', name: 'Piercing' },
-    { url: 'zabiegi-na-wlosy', name: 'Zabiegi na włosy' }
+    { url: 'lifting-rzes', name: 'Lifting rzęs' },
+    { url: 'wolumetria', name: 'Wolumetria' },
+    { url: 'kriolipoliza', name: 'Kriolipoliza' },
+    { url: 'zabiegi-na-wlosy', name: 'Zabiegi na włosy' },
+    { url: 'epilacja-laserowa', name: 'Epilacja laserowa' },
+    { url: 'stylizacja-brwi', name: 'Stylizacja brwi' },
+    { url: 'wypelnianie-zmarszczek', name: 'Wypełnianie zmarszczek' },
+    { url: 'stylizacja-rzes', name: 'Stylizacja rzęs' },
+    { url: 'botoks', name: 'Botoks' },
+    { url: 'piercing', name: 'Piercing' }
   ]
 
   const checks = [
@@ -303,6 +303,10 @@ Gorąco polecam`,
 
     & .wrapper {
       max-width: 1100px;
+
+      > p {
+        text-align: left;
+      }
     }
   }
 
